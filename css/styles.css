@@ -822,22 +822,22 @@ body {
 }
 @media (max-width: 768px) {
   body {
-    font-size: 20px; /* базовый текст — больше */
+    font-size: 40px; /* базовый текст — больше */
   }
 
   h1,
   .hero-title {
-    font-size: 36px; /* крупный заголовок */
+    font-size: 50px; /* крупный заголовок */
     line-height: 1.3;
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 40px;
     line-height: 1.3;
   }
 
   h3 {
-    font-size: 26px;
+    font-size: 40px;
     line-height: 1.3;
   }
 
@@ -846,7 +846,7 @@ body {
   .image-text,
   .quote-text,
   .mission-text {
-    font-size: 20px; /* в половину больше, как ты хотела */
+    font-size: 40px; /* в половину больше, как ты хотела */
     line-height: 1.5;
   }
 
@@ -854,6 +854,6 @@ body {
   .contact-section,
   .contact-left,
   .contact-right {
-    font-size: 20px;
+    font-size: 40px;
   }
 }
