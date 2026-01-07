@@ -48,41 +48,6 @@ body {
   margin: 0 auto; /* центр */
 }
 
-/* линия */
-.container::before {
-  content: "";
-  position: absolute;
-  top: 110px; /* под шапкой */
-  bottom: 80px; /* до низа */
-  left: 18px;
-  width: 1px;
-  background: rgba(90, 85, 73, 0.25);
-}
-
-/* точки в нужных секциях */
-.timeline,
-.quote-section,
-.mission-section,
-.contact-section {
-  position: relative;
-  padding-left: 36px; /* чтобы контент ушёл вправо от линии */
-}
-
-.timeline::before,
-.quote-section::before,
-.mission-section::before,
-.contact-section::before {
-  content: "";
-  position: absolute;
-  left: 14px;
-  top: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.7);
-  box-shadow: 0 0 0 2px rgba(90, 85, 73, 0.15);
-}
-
 /* Header */
 .header {
   text-align: center;
@@ -162,10 +127,12 @@ body {
 }
 
 .achievement {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 400;
+  text-align: center;
   color: #5a5549;
   line-height: 1.8;
+  margin-bottom: 30px;
 }
 
 /* Quote Section */
@@ -175,12 +142,34 @@ body {
 
 .image-container {
   margin-bottom: 20px;
+  height: 520px; /* фиксируем высоту рамки */
+  overflow: hidden; /* скрыть обрезанные части */
 }
 
 .portrait-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
+}
+/* Первая фотография: картинка полностью заполняет рамку */
+
+.image-container {
+  border-radius: 20px;
+  overflow: hidden; /* всё лишнее обрезаем */
+  padding: 0; /* без внутренних отступов */
+  background: transparent;
+  box-shadow: 0 40px 80px rgba(196, 165, 123, 0.35),
+    0 0 60px rgba(196, 165, 123, 0.25); /* пусть тень будет у контейнера */
+}
+.portrait-img {
+  width: 102%;
+  height: 102%;
+  transform: translate(-1%, -1%);
+}
+.image-container {
+  overflow: hidden;
 }
 
 .quote {
@@ -202,16 +191,28 @@ body {
 
 .link {
   display: inline-block;
-  font-size: 17px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 10px 16px;
-  border: 1px solid rgba(90, 85, 73, 0.35);
-  border-radius: 10px;
-  text-decoration: none;
+  font-size: 28px; /* крупный текст */
+  padding: 22px 38px; /* больше пространства внутри */
+  border-radius: 18px; /* мягкие края */
+  border: 2px solid rgba(90, 85, 73, 0.55);
+  background: rgba(255, 255, 255, 0.65);
   color: #5a5549;
-  background: rgba(255, 255, 255, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: #c4a57b;
+  color: #c4a57b;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 34px rgba(196, 165, 123, 0.35);
+}
+
 .cta-row {
   display: flex;
   justify-content: center; /* центр между соседними блоками */
@@ -275,19 +276,26 @@ body {
 }
 
 /* Gallery Section */
+/* --- ГАЛЕРЕЯ: ФОТО ЗАПОЛНЯЕТ ВСЮ РАМКУ --- */
 .gallery-section {
+  position: relative;
   margin-bottom: 50px;
-  height: 500px; /* Задаём высоту рамки */
-  overflow: hidden;
+  height: 500px; /* высота рамки как и была */
   border-radius: 20px;
+  overflow: hidden; /* обрезаем всё, что вылезет */
 }
 
-.gallery-img {
-  height: auto;
+/* сама картинка внутри галереи */
+.gallery-section .gallery-img {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Заполняет рамку */
-  display: block;
+  object-fit: cover; /* заполняет всю рамку */
+  object-position: center;
+  margin: 0;
+  padding: 0 !important; /* убираем старый padding */
+  border-radius: 0;
 }
 
 /* Statement Section */
@@ -422,8 +430,8 @@ body {
 /* CONTACT — красивый блок */
 .contact-wrap {
   display: flex;
-  gap: 40px;
-  align-items: flex-start;
+  gap: 15px;
+  align-items: center;
 }
 
 .contact-left {
@@ -794,7 +802,7 @@ body {
   /* блок с контактами и фото — делаем в столбик */
   .contact-wrap {
     flex-direction: column;
-    gap: 24px;
+    gap: 15px;
   }
 
   .contact-right {
@@ -804,6 +812,17 @@ body {
   .contact-photo {
     width: 100%;
     max-width: 100%;
+  }
+
+  /* — Контактная секция — красивое вертикальное центрирование — */
+  @media (min-width: 769px) {
+    .contact-wrap {
+      align-items: center; /* ставим по вертикальному центру */
+    }
+
+    .contact-left {
+      margin-top: 40px; /* немного ниже, чтобы было гармонично */
+    }
   }
 
   /* чтобы линия таймлайна не прилипала к самому краю на маленьком экране */
@@ -858,4 +877,61 @@ body {
   .contact-right {
     font-size: 20px !important;
   }
+}
+
+/* --- ПЕРВАЯ ФОТО: ЗАПОЛНЯЕТ РАМКУ БЕЗ ЩЕЛЕЙ --- */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  padding: 0;
+  background: transparent;
+}
+/* --- ХАК ДЛЯ ПЕРВОЙ ФОТО: УБИРАЕМ ЩЕЛЬ СПРАВА --- */
+.image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.image-container .portrait-img {
+  display: block;
+  width: 102%; /* картинка чуть шире контейнера */
+  margin: 0;
+  margin-right: -2%; /* “заводим” вправо за край */
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* --- КНОПКА BOOK NOW — УВЕЛИЧЕННАЯ И КРАСИВАЯ --- */
+.link {
+  display: inline-block;
+  font-size: 24px; /* крупнее */
+  padding: 18px 34px; /* больше внутренняя область */
+  border-radius: 14px; /* мягче углы */
+  border: 2px solid rgba(90, 85, 73, 0.45);
+  background: rgba(255, 255, 255, 0.55);
+  color: #5a5549;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.link:hover {
+  background: rgba(255, 255, 255, 0.85);
+  border-color: #c4a57b;
+  color: #c4a57b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(196, 165, 123, 0.35);
+}
+@media (max-width: 768px) {
+  .link {
+    font-size: 26px; /* почти такой же крупный текст */
+    padding: 20px 32px; /* удобнее нажимать пальцем */
+    border-radius: 16px;
+  }
+}
+.contact-left {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
