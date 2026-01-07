@@ -24,6 +24,7 @@ body {
   line-height: 1.6;
   font-size: 20px;
 }
+
 .large-quote {
   font-size: 44px;
   line-height: 1.2;
@@ -630,6 +631,8 @@ body {
 
 /* Общая панель со всем сайтом */
 .page-panel {
+  width: 980px; /* или твоя ширина */
+  margin: 0 auto; /* ставит по центру */
   background: #f7f1e5; /* внутренний бежевый фон */
 }
 
