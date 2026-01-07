@@ -883,7 +883,7 @@ body {
     0 0 60px rgba(196, 165, 123, 0.25);
 }
 body {
-  background-image: url("/images/Brand\ Background.jpg");
+  background-image: url("/images/brand-background.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* красивый параллакс-эффект */
