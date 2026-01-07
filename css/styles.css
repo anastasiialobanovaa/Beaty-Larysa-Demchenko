@@ -1,0 +1,890 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Bodoni Moda", serif; /* запасной цвет, если вдруг без градиента */
+  background-color: #e8e3d8;
+
+  /* сам градиент — слева теплее, справа светлее */
+  background: linear-gradient(
+    90deg,
+    #d7c4a6 0%,
+    /* тёплый беж слева */ #e8ddcc 40%,
+    /* мягкий переход */ #f5f0e6 100% /* почти светлый справа, но не белый */
+  );
+
+  color: #5a5549;
+  line-height: 1.6;
+  font-size: 20px;
+}
+.large-quote {
+  font-size: 44px;
+  line-height: 1.2;
+  color: rgba(90, 85, 73, 0.08); /* было 0.1–0.15, можно чуть уменьшить */
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px; /* читабельно на десктопе */
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 420px; /* мобилка/сторис */
+  margin: 0 auto;
+  padding: 0 24px;
+  background-size: cover;
+  background-size: contain;
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 980px; /* шире на компе */
+  }
+}
+
+.logo > img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  padding: 0; /* чтобы не сдвигало */
+  margin: 0 auto; /* центр */
+}
+
+/* линия */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 110px; /* под шапкой */
+  bottom: 80px; /* до низа */
+  left: 18px;
+  width: 1px;
+  background: rgba(90, 85, 73, 0.25);
+}
+
+/* точки в нужных секциях */
+.timeline,
+.quote-section,
+.mission-section,
+.contact-section {
+  position: relative;
+  padding-left: 36px; /* чтобы контент ушёл вправо от линии */
+}
+
+.timeline::before,
+.quote-section::before,
+.mission-section::before,
+.contact-section::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 0 2px rgba(90, 85, 73, 0.15);
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 60px;
+  background-color: #fff;
+}
+.header-logo {
+  background-color: #fff;
+  padding: 22px 62px 22px 71px;
+}
+.logo h1 {
+  font-size: 18px;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: #c4a57b;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
+
+.subtitle {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #a89b8a;
+  margin-bottom: 30px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #5a5549;
+  font-size: 30px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+@media (min-width: 768px) {
+  .nav a {
+    font-size: 30px;
+    letter-spacing: 3px;
+  }
+}
+
+.nav a:hover {
+  color: #c4a57b;
+}
+
+/* Timeline Section */
+.timeline {
+  margin-bottom: 50px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: baseline;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.year {
+  font-size: 12px;
+  color: #a89b8a;
+  border: 1px solid #a89b8a;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.timeline-label {
+  font-size: 20px;
+  color: #a89b8a;
+  text-transform: lowercase;
+}
+
+.timeline-content {
+  margin-top: 15px;
+}
+
+.achievement {
+  font-size: 20px;
+  font-weight: 400;
+  color: #5a5549;
+  line-height: 1.8;
+}
+
+/* Quote Section */
+.quote-section {
+  margin-bottom: 40px;
+}
+
+.image-container {
+  margin-bottom: 20px;
+}
+
+.portrait-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.quote {
+  font-size: 20px;
+  font-style: italic;
+  color: #5a5549;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+.description {
+  font-size: 20px;
+  color: #a89b8a;
+  line-height: 1.8;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  padding: 40px 20px 40px 20px;
+}
+
+.link {
+  display: inline-block;
+  font-size: 17px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border: 1px solid rgba(90, 85, 73, 0.35);
+  border-radius: 10px;
+  text-decoration: none;
+  color: #5a5549;
+  background: rgba(255, 255, 255, 0.35);
+}
+.cta-row {
+  display: flex;
+  justify-content: center; /* центр между соседними блоками */
+  margin-top: 30px;
+}
+
+@media (min-width: 768px) {
+  .link {
+    font-size: 20px;
+    padding: 14px 22px;
+    border-radius: 12px;
+  }
+}
+.link:hover {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(196, 165, 123, 0.6);
+  color: #c4a57b;
+}
+
+/* Image Section */
+.image-section {
+  margin-bottom: 40px;
+}
+
+.full-width-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Experience Section */
+.experience-section {
+  margin-bottom: 40px;
+}
+
+.experience-text {
+  font-size: 20px;
+  color: #a89b8a;
+  line-height: 1.8;
+}
+
+/* Mission Section */
+.mission-section {
+  margin-bottom: 30px;
+}
+
+.mission-text {
+  font-size: 20px;
+  color: #5a5549;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.cta-text {
+  font-size: 20px;
+  color: #5a5549;
+  font-style: italic;
+}
+
+/* Services Section */
+.services-section {
+  margin-bottom: 50px;
+}
+
+.services-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Gallery Section */
+.gallery-section {
+  margin-bottom: 50px;
+  height: 500px; /* Задаём высоту рамки */
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.gallery-img {
+  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Заполняет рамку */
+  display: block;
+}
+
+/* Statement Section */
+.statement-section {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.statement-text {
+  font-size: 20px;
+  color: #a89b8a;
+  line-height: 1.8;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Contact Section */
+.contact-section {
+  margin-bottom: 50px;
+}
+
+.contact-title {
+  font-size: 30px;
+  font-weight: 400;
+  color: #5a5549;
+  margin-bottom: 25px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  color: #5a5549;
+}
+
+.icon {
+  font-size: 17px;
+  width: 20px;
+  text-align: center;
+}
+
+/* Bottom Quote */
+.bottom-quote {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.large-quote {
+  font-size: 16px;
+  font-style: italic;
+  color: rgba(90, 85, 73, 0.15);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .logo h1 {
+    font-size: 16px;
+  }
+
+  .achievement {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 768px) {
+  .logo h1 {
+    font-size: 22px;
+  }
+
+  .achievement {
+    font-size: 16px;
+  }
+
+  .quote {
+    font-size: 15px;
+  }
+
+  .large-quote {
+    font-size: 20px;
+  }
+}
+.quote-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 420px) {
+  .quote-section {
+    grid-template-columns: 1fr;
+  }
+}
+.nav a {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 26px;
+  height: 1px;
+  transform: translateX(-50%);
+  background: rgba(90, 85, 73, 0.35);
+}
+.large-quote {
+  font-size: 44px;
+  line-height: 1.2;
+  color: rgba(90, 85, 73, 0.1);
+}
+/* все основные картинки */
+.portrait-img,
+.full-width-img,
+.gallery-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px; /* скругление */
+  background: transparent; /* убирает ощущение белой подложки */
+  border: none; /* если вдруг где-то есть border */
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.12); /* мягкая тень (можешь убрать, если не надо) */
+}
+.image-container {
+  border-radius: 14px;
+  overflow: hidden; /* чтобы картинка не торчала за углы и не было рамки */
+  background: transparent;
+}
+@media (min-width: 768px) {
+  .description,
+  .experience-text,
+  .services-list li,
+  .statement-text,
+  .contact-item {
+    font-size: 25px;
+    line-height: 1.9;
+  }
+
+  .achievement {
+    font-size: 25px;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .quote {
+    font-size: 25px;
+  }
+}
+@media (min-width: 1200px) {
+  body {
+    font-size: 30px; /* ← это нормально для десктопа */
+    line-height: 1.8;
+  }
+
+  .description,
+  .experience-text,
+  .services-list li,
+  .statement-text,
+  .contact-item,
+  .mission-text {
+    font-size: 25px; /* ← ОСНОВНОЙ ТЕКСТ */
+    line-height: 1.9;
+  }
+
+  .quote {
+    font-size: 20px; /* цитаты ещё крупнее */
+  }
+
+  .achievement {
+    font-size: 26px; /* заголовки */
+    line-height: 1.4;
+  }
+}
+.image-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* текст | фото */
+  gap: 40px;
+  align-items: start;
+}
+.image-text {
+  grid-column: 1;
+  padding: 165px 16px 90px 40px;
+}
+
+.image-foto {
+  grid-column: 2;
+}
+.image-section img {
+  display: block;
+  /* width: 100%; теперь это 100% КОЛОНКИ, а не всей страницы */
+  height: auto;
+  border-radius: 14px;
+}
+@media (max-width: 600px) {
+  .image-section {
+    grid-template-columns: 1fr;
+  }
+}
+.gallery-img {
+  padding: 30px 100px 30px 100px;
+}
+/* CONTACT — красивый блок */
+.contact-wrap {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.contact-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-right {
+  width: 360px;
+}
+
+.contact-photo {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+/* заголовок */
+.contact-title {
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 18px;
+  letter-spacing: 0.02em;
+}
+
+/* список контактов */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* одна строка */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  color: #5a5549;
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+/* иконка-кнопка */
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(90, 85, 73, 0.15);
+  flex: 0 0 42px;
+}
+
+/* svg в цвет текста */
+.contact-icon svg {
+  display: block;
+}
+
+/* адаптив: на телефоне фото вниз */
+@media (max-width: 768px) {
+  .contact-wrap {
+    flex-direction: column;
+  }
+  .contact-right {
+    width: 100%;
+  }
+}
+/* Luxury list */
+.services-section {
+  margin-top: 20px;
+}
+
+.services-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 18px;
+
+  /* делаем блок шире и ровнее */
+  max-width: 720px;
+}
+
+@media (max-width: 420px) {
+  .services-list {
+    max-width: 100%;
+  }
+  .services-list li {
+    font-size: 16px;
+    margin: 14px 0;
+    padding-left: 30px;
+  }
+}
+.services-label {
+  margin: 40px 0 24px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(90, 85, 73, 0.6);
+  font-weight: 400;
+}
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+.services-list li {
+  position: relative;
+  padding-left: 0;
+  margin: 22px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #5a5549;
+}
+
+.services-label {
+  position: relative;
+  margin: 60px 0 32px;
+  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(90, 85, 73, 0.65);
+  font-weight: 400;
+}
+
+.services-label::before {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: rgba(90, 85, 73, 0.35);
+  margin: 0 auto 18px;
+}
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 760px;
+  text-align: center;
+}
+
+.services-list li {
+  position: relative;
+  margin: 26px 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #5a5549;
+}
+
+/* кружок */
+.services-list li::before {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(196, 165, 123, 0.85); /* золотистый */
+  margin: 0 auto 12px;
+}
+@media (min-width: 768px) {
+  .services-list li {
+    font-size: 20px;
+    margin: 30px 0;
+  }
+}
+.services-label {
+  position: relative;
+  margin: 80px 0 40px;
+  text-align: center;
+
+  font-size: 20px; /* крупнее */
+  letter-spacing: 0.45em; /* широко, "дорого" */
+  color: #c4a57b; /* мягкое золото, как логотип */
+  text-transform: uppercase;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.services-label::before {
+  content: "";
+  width: 120px; /* длиннее и тоньше */
+  height: 1px;
+  background: rgba(196, 165, 123, 0.5);
+  display: block;
+  margin: 0 auto 25px;
+}
+.services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+}
+
+.services-list li {
+  font-size: 22px; /* заметнее */
+  color: #5a5549;
+  margin: 32px 0;
+  line-height: 1.6;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+/* Кружочек перед пунктом */
+.services-list li::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c4a57b; /* золотистый */
+  margin: 0 auto 16px;
+}
+@media (min-width: 1200px) {
+  .services-label {
+    font-size: 24px;
+    letter-spacing: 0.5em;
+  }
+
+  .services-list li {
+    font-size: 24px;
+    margin: 36px 0;
+  }
+}
+/* last day to commit */
+/* Фон всего сайта вокруг панели */
+body {
+  background: #ead3af; /* или твой текущий градиентный/бежевый фон */
+}
+
+/* Общая панель со всем сайтом */
+.page-panel {
+  background: #f7f1e5; /* внутренний бежевый фон */
+}
+
+/* Десктоп: включаем красивую рамку и тень */
+@media (min-width: 1024px) {
+  .page-panel {
+    max-width: 1000px; /* ширина "ленты" */
+    margin: 0 auto 80px; /* выравниваем по центру и даём отступ снизу */
+    border-radius: 40px; /* закругления как на твоём примере */
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12),
+      0 100px 160px rgba(0, 0, 0, 0.08), 0 160px 260px rgba(0, 0, 0, 0.05);
+    overflow: hidden; /* чтобы ничего не вылезало за скругления */
+  }
+}
+
+/* Мобильный: никаких рамок и теней */
+@media (max-width: 1023px) {
+  .page-panel {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+/* logo (day to commit) */
+.header {
+  background: #ffffff; /* белая полоса под логотип */
+  padding: 40px 40px 20px; /* сверху/по бокам/снизу – можно подправить */
+  text-align: center;
+}
+
+/* лёгкая тень снизу хедера, чтобы переход в бежевый был мягким */
+.header {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* сам логотип */
+.logo {
+  width: 100%;
+  max-width: 100%; /* чтобы не упирался в края */
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* logo */
+/* === РАМКА ВОКРУГ ВСЕГО САЙТА === */
+body {
+  background: #ead3af; /* внешний фон */
+}
+
+.page-panel {
+  background: #f7f1e5; /* внутренний бежевый фон */
+}
+
+@media (min-width: 1024px) {
+  .page-panel {
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    border-radius: 40px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12),
+      0 100px 160px rgba(0, 0, 0, 0.08), 0 160px 260px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+  }
+}
+
+/* === ШАПКА С ЛОГОТИПОМ — ОТ КРАЯ ДО КРАЯ РАМКИ === */
+.header {
+  background: #ffffff;
+  text-align: center;
+  padding: 40px 40px 25px; /* внутренняя "воздушность" для логотипа */
+  margin-bottom: 40px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06); /* мягкий переход в бежевый */
+}
+
+/* Блок с логотипом */
+.header-logo {
+  max-width: 100%;
+  margin: 0 auto 20px;
+}
+
+/* Картинка логотипа тянется по ширине шапки */
+.header-logo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* === КОНТЕЙНЕР ДЛЯ ВСЕГО ОСТАЛЬНОГО === */
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+/* Премиальная мягкая тень для всех фото */
+.portrait-img,
+.image-foto,
+.full-width-img,
+.gallery-img,
+.image-container,
+.gallery-section,
+.contact-photo,
+.contact-right {
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(196, 165, 123, 0.35),
+    0 0 60px rgba(196, 165, 123, 0.25);
+}
+body {
+  background-image: url("/images/Brand\ Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* красивый параллакс-эффект */
+}
