@@ -755,10 +755,6 @@ body {
   position: relative;
 }
 
-/* чтобы линия была привязана к контейнеру, а не "гуляла" */
-.container::before {
-  left: 24px; /* чуть правее от края панели */
-}
 /* phone */
 
 /* --- АДАПТАЦИЯ ПОД ТЕЛЕФОН --- */
@@ -823,21 +819,6 @@ body {
     .contact-left {
       margin-top: 40px; /* немного ниже, чтобы было гармонично */
     }
-  }
-
-  /* чтобы линия таймлайна не прилипала к самому краю на маленьком экране */
-  .timeline,
-  .quote-section,
-  .mission-section,
-  .contact-section {
-    padding-left: 24px;
-  }
-
-  .timeline::before,
-  .quote-section::before,
-  .mission-section::before,
-  .contact-section::before {
-    left: 10px;
   }
 }
 
@@ -926,7 +907,7 @@ body {
 }
 @media (max-width: 768px) {
   .link {
-    font-size: 26px; /* почти такой же крупный текст */
+    font-size: 50px; /* почти такой же крупный текст */
     padding: 20px 32px; /* удобнее нажимать пальцем */
     border-radius: 16px;
   }
@@ -934,4 +915,48 @@ body {
 .contact-left {
   margin-right: 0 !important;
   padding-right: 0 !important;
+}
+/* --- МОБИЛКА: фото заполняет рамку, без пустой области снизу --- */
+@media (max-width: 768px) {
+  /* сама рамка подстраивается под размер фото */
+  .image-container,
+  .gallery-section {
+    height: auto;
+  }
+
+  /* картинка ведёт себя как обычный блок и тянется на всю ширину */
+  .image-container .portrait-img,
+  .gallery-section .gallery-img {
+    position: static; /* отменяем absolute на мобиле */
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* убираем большие отступы у галереи на телефоне */
+  .gallery-img {
+    padding: 0;
+  }
+}
+/* --- МОБАЙЛ: логотип как баннер на всю ширину --- */
+@media (max-width: 768px) {
+  /* контейнер без лишних отступов */
+  .header-logo,
+  .logo-container,
+  .hero-logo {
+    padding: 0 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* сама картинка логотипа */
+  .header-logo img,
+  .logo-container img,
+  .hero-logo img {
+    width: 100% !important; /* растягиваем по ширине экрана */
+    height: auto !important; /* сохраняем пропорции */
+    display: block; /* без белых полос по бокам */
+    object-fit: cover; /* если нужно кадрирование */
+  }
 }
