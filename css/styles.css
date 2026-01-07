@@ -33,7 +33,6 @@ body {
 
 .container {
   width: 100%;
-  max-width: 420px; /* мобилка/сторис */
   margin: 0 auto;
   padding: 0 24px;
   background-size: cover;
@@ -714,4 +713,110 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* красивый параллакс-эффект */
+}
+/* --- ЖЁСТКО ФИКСИРУЕМ ПАНЕЛЬ И КОНТЕЙНЕР ПО ЦЕНТРУ --- */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* фон вокруг панели (как ты хотела) */
+body {
+  background-image: url("https://anastasiialobanovaa.github.io/Beaty-Larysa-Demchenko/images/brand-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* сама "лента" / рамка со всем сайтом */
+.page-panel {
+  width: 980px; /* фиксированная ширина, как на компе */
+  margin: 0 auto; /* по центру экрана */
+  background: #f7f1e5;
+  position: relative;
+}
+
+/* внутренний контейнер с текстом и секциями */
+.container {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+  position: relative;
+}
+
+/* чтобы линия была привязана к контейнеру, а не "гуляла" */
+.container::before {
+  left: 24px; /* чуть правее от края панели */
+}
+/* phone */
+/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОН --- */
+@media (max-width: 768px) {
+  /* сама панель */
+  .page-panel {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+  }
+
+  /* основной контейнер внутри */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px 32px;
+  }
+
+  /* цитаты и блок с "где искусство и медицина..." — из двух колонок в одну */
+  .quote-section {
+    display: block;
+    padding-left: 16px; /* чуть меньше смещение от линии */
+  }
+
+  .image-section {
+    display: block; /* вместо grid 1fr 1fr */
+  }
+
+  .image-text,
+  .image-foto {
+    grid-column: auto;
+    margin-bottom: 20px;
+  }
+
+  .image-section img,
+  .gallery-img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* блок с контактами и фото — делаем в столбик */
+  .contact-wrap {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-photo {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* чтобы линия таймлайна не прилипала к самому краю на маленьком экране */
+  .timeline,
+  .quote-section,
+  .mission-section,
+  .contact-section {
+    padding-left: 24px;
+  }
+
+  .timeline::before,
+  .quote-section::before,
+  .mission-section::before,
+  .contact-section::before {
+    left: 10px;
+  }
 }
