@@ -30,12 +30,6 @@ body {
   color: rgba(90, 85, 73, 0.08); /* было 0.1–0.15, можно чуть уменьшить */
 }
 
-@media (min-width: 768px) {
-  body {
-    font-size: 18px; /* читабельно на десктопе */
-  }
-}
-
 .container {
   width: 100%;
   max-width: 420px; /* мобилка/сторис */
@@ -43,12 +37,6 @@ body {
   padding: 0 24px;
   background-size: cover;
   background-size: contain;
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 980px; /* шире на компе */
-  }
 }
 
 .logo > img {
@@ -137,12 +125,6 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   transition: color 0.3s;
-}
-@media (min-width: 768px) {
-  .nav a {
-    font-size: 30px;
-    letter-spacing: 3px;
-  }
 }
 
 .nav a:hover {
@@ -236,13 +218,6 @@ body {
   margin-top: 30px;
 }
 
-@media (min-width: 768px) {
-  .link {
-    font-size: 20px;
-    padding: 14px 22px;
-    border-radius: 12px;
-  }
-}
 .link:hover {
   background: rgba(255, 255, 255, 0.6);
   border-color: rgba(196, 165, 123, 0.6);
@@ -375,38 +350,6 @@ body {
   font-weight: 300;
 }
 
-/* Responsive Design */
-@media (max-width: 480px) {
-  .container {
-    padding: 30px 20px;
-  }
-
-  .logo h1 {
-    font-size: 16px;
-  }
-
-  .achievement {
-    font-size: 13px;
-  }
-}
-
-@media (min-width: 768px) {
-  .logo h1 {
-    font-size: 22px;
-  }
-
-  .achievement {
-    font-size: 16px;
-  }
-
-  .quote {
-    font-size: 15px;
-  }
-
-  .large-quote {
-    font-size: 20px;
-  }
-}
 .quote-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -414,11 +357,6 @@ body {
   align-items: start;
 }
 
-@media (max-width: 420px) {
-  .quote-section {
-    grid-template-columns: 1fr;
-  }
-}
 .nav a {
   position: relative;
   padding-bottom: 10px;
@@ -456,51 +394,7 @@ body {
   overflow: hidden; /* чтобы картинка не торчала за углы и не было рамки */
   background: transparent;
 }
-@media (min-width: 768px) {
-  .description,
-  .experience-text,
-  .services-list li,
-  .statement-text,
-  .contact-item {
-    font-size: 25px;
-    line-height: 1.9;
-  }
 
-  .achievement {
-    font-size: 25px;
-    line-height: 1.6;
-    text-align: center;
-  }
-
-  .quote {
-    font-size: 25px;
-  }
-}
-@media (min-width: 1200px) {
-  body {
-    font-size: 30px; /* ← это нормально для десктопа */
-    line-height: 1.8;
-  }
-
-  .description,
-  .experience-text,
-  .services-list li,
-  .statement-text,
-  .contact-item,
-  .mission-text {
-    font-size: 25px; /* ← ОСНОВНОЙ ТЕКСТ */
-    line-height: 1.9;
-  }
-
-  .quote {
-    font-size: 20px; /* цитаты ещё крупнее */
-  }
-
-  .achievement {
-    font-size: 26px; /* заголовки */
-    line-height: 1.4;
-  }
-}
 .image-section {
   display: grid;
   grid-template-columns: 1fr 1fr; /* текст | фото */
@@ -521,11 +415,7 @@ body {
   height: auto;
   border-radius: 14px;
 }
-@media (max-width: 600px) {
-  .image-section {
-    grid-template-columns: 1fr;
-  }
-}
+
 .gallery-img {
   padding: 30px 100px 30px 100px;
 }
@@ -596,15 +486,6 @@ body {
   display: block;
 }
 
-/* адаптив: на телефоне фото вниз */
-@media (max-width: 768px) {
-  .contact-wrap {
-    flex-direction: column;
-  }
-  .contact-right {
-    width: 100%;
-  }
-}
 /* Luxury list */
 .services-section {
   margin-top: 20px;
@@ -619,16 +500,6 @@ body {
   max-width: 720px;
 }
 
-@media (max-width: 420px) {
-  .services-list {
-    max-width: 100%;
-  }
-  .services-list li {
-    font-size: 16px;
-    margin: 14px 0;
-    padding-left: 30px;
-  }
-}
 .services-label {
   margin: 40px 0 24px;
   text-align: center;
@@ -700,12 +571,7 @@ body {
   background: rgba(196, 165, 123, 0.85); /* золотистый */
   margin: 0 auto 12px;
 }
-@media (min-width: 768px) {
-  .services-list li {
-    font-size: 20px;
-    margin: 30px 0;
-  }
-}
+
 .services-label {
   position: relative;
   margin: 80px 0 40px;
@@ -755,17 +621,7 @@ body {
   background: #c4a57b; /* золотистый */
   margin: 0 auto 16px;
 }
-@media (min-width: 1200px) {
-  .services-label {
-    font-size: 24px;
-    letter-spacing: 0.5em;
-  }
 
-  .services-list li {
-    font-size: 24px;
-    margin: 36px 0;
-  }
-}
 /* last day to commit */
 /* Фон всего сайта вокруг панели */
 body {
@@ -775,18 +631,6 @@ body {
 /* Общая панель со всем сайтом */
 .page-panel {
   background: #f7f1e5; /* внутренний бежевый фон */
-}
-
-/* Десктоп: включаем красивую рамку и тень */
-@media (min-width: 1024px) {
-  .page-panel {
-    max-width: 1000px; /* ширина "ленты" */
-    margin: 0 auto 80px; /* выравниваем по центру и даём отступ снизу */
-    border-radius: 40px; /* закругления как на твоём примере */
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.12),
-      0 100px 160px rgba(0, 0, 0, 0.08), 0 160px 260px rgba(0, 0, 0, 0.05);
-    overflow: hidden; /* чтобы ничего не вылезало за скругления */
-  }
 }
 
 /* Мобильный: никаких рамок и теней */
