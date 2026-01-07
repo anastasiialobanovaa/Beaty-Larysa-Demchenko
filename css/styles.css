@@ -820,3 +820,40 @@ body {
     left: 10px;
   }
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 20px; /* базовый текст — больше */
+  }
+
+  h1,
+  .hero-title {
+    font-size: 36px; /* крупный заголовок */
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  p,
+  li,
+  .image-text,
+  .quote-text,
+  .mission-text {
+    font-size: 20px; /* в половину больше, как ты хотела */
+    line-height: 1.5;
+  }
+
+  /* контакты — чтобы читалось комфортно */
+  .contact-section,
+  .contact-left,
+  .contact-right {
+    font-size: 20px;
+  }
+}
