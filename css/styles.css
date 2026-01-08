@@ -1022,3 +1022,41 @@ body {
     margin-bottom: 40px !important;
   }
 }
+/* --- ФИНАЛЬНЫЕ ПРАВКИ МОБИЛКИ — СТАВИТЬ В САМЫЙ НИЗ CSS --- */
+@media (max-width: 768px) {
+  /* Отступ под кнопкой BOOK NOW */
+  .cta-row {
+    margin-bottom: 6px !important; /* минимальный воздух */
+  }
+
+  .link {
+    margin-bottom: 6px !important;
+  }
+
+  /* Отступ под контактами */
+  .contact-section {
+    margin-bottom: 50px !important; /* добавляем больше пространства */
+  }
+
+  .contact-wrap {
+    margin-bottom: 40px !important;
+  }
+}
+/* --- ФИНАЛЬНЫЙ МОБИЛЬНЫЙ ТЮНИНГ --- */
+@media (max-width: 768px) {
+  /* Кнопка и строка с кнопкой */
+  .cta-row {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .link {
+    margin-bottom: 0 !important;
+    display: inline-block;
+  }
+
+  /* Уменьшаем расстояние ПОД самой секцией с кнопкой */
+  .quote-section {
+    margin-bottom: 12px !important; /* было 40px, поэтому казалось, что "под кнопкой" */
+  }
+}
