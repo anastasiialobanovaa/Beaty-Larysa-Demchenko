@@ -1011,40 +1011,9 @@ body {
 
   /* остальное (quote-section, image-section и т.д.) оставь как есть */
 }
+/* --- ФИНАЛЬНЫЙ ТЮНИНГ МОБИЛКИ: КНОПКА + ТЕКСТ ПОД НЕЙ --- */
 @media (max-width: 768px) {
-  /* Добавляем пространство под контактами */
-  .contact-section {
-    margin-bottom: 40px !important; /* увеличиваем "воздух" под блоком */
-  }
-
-  /* Если там у фото тоже стоит маленький отступ */
-  .contact-wrap {
-    margin-bottom: 40px !important;
-  }
-}
-/* --- ФИНАЛЬНЫЕ ПРАВКИ МОБИЛКИ — СТАВИТЬ В САМЫЙ НИЗ CSS --- */
-@media (max-width: 768px) {
-  /* Отступ под кнопкой BOOK NOW */
-  .cta-row {
-    margin-bottom: 6px !important; /* минимальный воздух */
-  }
-
-  .link {
-    margin-bottom: 6px !important;
-  }
-
-  /* Отступ под контактами */
-  .contact-section {
-    margin-bottom: 50px !important; /* добавляем больше пространства */
-  }
-
-  .contact-wrap {
-    margin-bottom: 40px !important;
-  }
-}
-/* --- ФИНАЛЬНЫЙ МОБИЛЬНЫЙ ТЮНИНГ --- */
-@media (max-width: 768px) {
-  /* Кнопка и строка с кнопкой */
+  /* Кнопка и её строка — без лишнего воздуха снизу */
   .cta-row {
     margin-top: 10px !important;
     margin-bottom: 0 !important;
@@ -1055,8 +1024,49 @@ body {
     display: inline-block;
   }
 
-  /* Уменьшаем расстояние ПОД самой секцией с кнопкой */
+  /* Текстовый блок под кнопкой — уменьшить дырку сверху */
+  .quote-section .description {
+    margin-top: 8px !important; /* вместо 30px */
+    padding-top: 12px !important; /* вместо 40px */
+    margin-bottom: 32px !important; /* можно чуть меньше, чем 50px */
+  }
+
+  /* Чуть меньше общего отступа секции вниз */
   .quote-section {
-    margin-bottom: 12px !important; /* было 40px, поэтому казалось, что "под кнопкой" */
+    margin-bottom: 16px !important;
+  }
+}
+/* --- ФИНАЛЬНЫЙ МОБИЛЬНЫЙ ТЮНИНГ: КНОПКА + КОНТАКТЫ --- */
+@media (max-width: 768px) {
+  /* 1. КНОПКА BOOK NOW — убираем "яму" под ней */
+  .cta-row {
+    margin-top: 10px !important;
+    margin-bottom: 0 !important;
+  }
+
+  .link {
+    margin-bottom: 0 !important;
+    display: inline-block;
+  }
+
+  /* текстовый блок под кнопкой (где описание) — подтягиваем ближе */
+  .quote-section .description {
+    margin-top: 8px !important; /* было 30 */
+    padding-top: 12px !important; /* было 40 */
+    margin-bottom: 28px !important; /* вместо 50 */
+  }
+
+  /* 2. КОНТАКТЫ — больше воздуха ПОД всем блоком */
+  .contact-section {
+    margin-bottom: 80px !important; /* реально заметный отступ перед следующей секцией */
+  }
+
+  /* между контактами и фото внутри contact-wrap */
+  .contact-wrap {
+    gap: 24px !important; /* расстояние между текстом и фото */
+  }
+
+  .contact-right {
+    margin-top: 8px !important; /* ещё чуть-чуть воздуха над фото */
   }
 }
