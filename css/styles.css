@@ -966,29 +966,47 @@ body {
     object-fit: cover; /* если нужно кадрирование */
   }
 }
-
-/* --- МОБИЛКА: полупрозрачная картинка поверх текущего фона панели --- */
+/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОН --- */
 @media (max-width: 768px) {
+  /* сама панель */
   .page-panel {
-    position: relative;
-    overflow: hidden; /* чтобы фон не вылезал за рамки */
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
   }
 
-  .page-panel::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0 */
-    background-image: url("https://anastasiialobanovaa.github.io/Beaty-Larysa-Demchenko/images/brand-background.jpg"); /* сюда твоя картинка */
+  /* основной контейнер внутри */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px 32px;
+  }
+}
+/* --- АДАПТАЦИЯ ПОД ТЕЛЕФОН --- */
+@media (max-width: 768px) {
+  /* сама панель */
+  .page-panel {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 0;
+
+    /* ВАЖНО: фон только в контейнере на мобильной версии */
+    background: linear-gradient(
+        rgba(247, 241, 229, 0.9),
+        rgba(247, 241, 229, 0.9)
+      ),
+      url("https://anastasiialobanovaa.github.io/Beaty-Larysa-Demchenko/images/brand-background.jpg");
     background-size: cover;
     background-position: center;
-    opacity: 0.1; /* СУПЕР-полупрозрачная, можно 0.06–0.18 */
-    pointer-events: none;
-    z-index: 0;
+    background-repeat: no-repeat;
   }
 
-  /* Весь контент сверху картинки */
-  .page-panel > * {
-    position: relative;
-    z-index: 1;
+  /* основной контейнер внутри */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 16px 32px;
   }
+
+  /* остальное (quote-section, image-section и т.д.) оставь как есть */
 }
