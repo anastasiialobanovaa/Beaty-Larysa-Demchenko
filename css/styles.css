@@ -910,12 +910,12 @@ body {
     font-size: 37px; /* почти такой же крупный текст */
     padding: 14px 26px; /* удобнее нажимать пальцем */
     border-radius: 16px;
-    margin-bottom: 10px; /* уменьшит расстояние снизу */
+    margin-bottom: 0px; /* уменьшит расстояние снизу */
     display: inline-block;
   }
   .cta-row {
     margin-top: 10px; /* меньше отступ сверху */
-    margin-bottom: 0px;
+    margin-bottom: 10px;
   }
 }
 .contact-left {
@@ -1019,6 +1019,6 @@ body {
 
   /* Если там у фото тоже стоит маленький отступ */
   .contact-wrap {
-    margin-bottom: 20px !important;
+    margin-bottom: 40px !important;
   }
 }
