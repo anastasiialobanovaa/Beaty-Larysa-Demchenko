@@ -992,10 +992,11 @@ body {
 
     /* ВАЖНО: фон только в контейнере на мобильной версии */
     background: linear-gradient(
-        rgba(247, 241, 229, 0.9),
-        rgba(247, 241, 229, 0.9)
+        rgba(247, 241, 229, 0.8),
+        rgba(247, 241, 229, 0.8)
       ),
       url("https://anastasiialobanovaa.github.io/Beaty-Larysa-Demchenko/images/brand-background.jpg");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
