@@ -1868,19 +1868,3 @@ body {
   }
 }
 /* TEST MOBILE */
-/* Mobile navigation — compact version */
-@media (max-width: 767px) {
-  .nav {
-    display: flex;
-    justify-content: center;
-    gap: 18px; /* меньше расстояние между ссылками */
-    padding: 6px 0; /* меньше высота */
-  }
-
-  .nav a {
-    font-size: 12px; /* 👈 главное: уменьшаем */
-    letter-spacing: 0.08em; /* аккуратнее, не так “широко” */
-    padding: 4px 6px; /* уменьшаем кликабельную зону */
-    line-height: 1.2;
-  }
-}
