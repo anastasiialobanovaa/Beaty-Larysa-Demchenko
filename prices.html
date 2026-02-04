@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lara Sademchenko - PMU Artist and Trainer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#top" id="top">
+        <img src="logo.png" alt="Larysa Demchenko logo" />
+      </a>
+
+      <p>PMU - ARTIST AND TRAINER</p>
+
+      <nav>
+        <a href="#price">PRICE</a>
+        <a href="#courses">COURSES</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="price">
+        <h2>PRICE SERVICES</h2>
+
+        <article>
+          <h3>Aesthetic Areola Restoration</h3>
+
+          <p>
+            Specialization: Realistic 3D areola for women after breast surgery,
+            reconstruction, or pigment loss.
+          </p>
+          <p>Approach: Medical precision, artistic realism.</p>
+          <p>
+            Results: Natural colour, soft shading, restored symmetry and
+            confidence.
+          </p>
+
+          <p><strong>From</strong> €699</p>
+          <p><strong>€50</strong> Touch-up (4–8 weeks)</p>
+
+          <button type="button" onclick="toggleAreolaSpoiler(this)">
+            SEE MORE
+          </button>
+
+          <div id="areola-spoiler" hidden>
+            <img
+              src="areola-example.jpg"
+              alt="Aesthetic Areola Restoration example"
+            />
+          </div>
+
+          <script>
+            function toggleAreolaSpoiler(button) {
+              const spoiler = document.getElementById("areola-spoiler");
+
+              if (spoiler.hasAttribute("hidden")) {
+                spoiler.removeAttribute("hidden");
+                button.textContent = "HIDE";
+              } else {
+                spoiler.setAttribute("hidden", "");
+                button.textContent = "SEE MORE";
+              }
+            }
+          </script>
+
+          <p>
+            <a href="#book-areola">Book now</a>
+          </p>
+        </article>
+
+        <section>
+          <h3>Permanent Make-Up (Natural Aesthetic PMU)</h3>
+
+          <section>
+            <h4>AirBrows — Natural Brows</h4>
+            <ul>
+              <li>Soft shading, airy finish — €400</li>
+              <li>Touch-up — €50</li>
+              <li>Refresh 12m — €200</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>Soft Lips — LipBlush</h4>
+            <ul>
+              <li>Soft shading, airy finish — €400</li>
+              <li>Touch-up — €50</li>
+              <li>Refresh 12m — €200</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>Silky Eyeliner — Lash Enhancement</h4>
+            <ul>
+              <li>Delicate definition without visible makeup — €400</li>
+              <li>Touch-up — €50</li>
+              <li>Refresh 12m — €200</li>
+            </ul>
+          </section>
+
+          <section>
+            <h4>Soft Shaded Eyeliner — NEW</h4>
+            <p>Soft shaded wing, non-graphic, elegant.</p>
+            <ul>
+              <li>Procedure — €400</li>
+              <li>Touch-up — €50</li>
+              <li>Refresh 12m — €200</li>
+            </ul>
+
+            <p>
+              <a href="#book-eyeliner">Book now</a>
+            </p>
+          </section>
+
+          <section>
+            <h4>Colour Refresh (12-Month Maintenance)</h4>
+            <p>For brows, lips or eyeliner (Recommended yearly)</p>
+            <p><strong>€200</strong></p>
+
+            <p>
+              <a href="#book-refresh">Book now</a>
+            </p>
+          </section>
+        </section>
+
+        <article>
+          <h3>Tiny Emotional Tattoos (Fine-Line Tattoos)</h3>
+          <p>Minimalistic, delicate tattoos with meaningful symbolism.</p>
+          <p><strong>From</strong> €120</p>
+
+          <p>
+            <a href="#book-tattoo">Book now</a>
+          </p>
+        </article>
+      </section>
+
+      <section id="why">
+        <h2>Why Clients Choose Me</h2>
+        <ul>
+          <li>World Champion Technique (WULOP 2025)</li>
+          <li>GGD Certified (Netherlands)</li>
+          <li>Natural, non-overdone aesthetic</li>
+          <li>Medical-grade safety and hygiene</li>
+          <li>20+ years of artistic background</li>
+          <li>Calm, respectful, client-centered experience</li>
+        </ul>
+
+        <figure>
+          <img src="photo-1.jpg" alt="Work / award photo 1" />
+        </figure>
+        <figure>
+          <img src="photo-2.jpg" alt="Work / award photo 2" />
+        </figure>
+        <figure>
+          <img src="photo-3.jpg" alt="Studio / artist photo" />
+        </figure>
+      </section>
+
+      <section id="appointment">
+        <h2>Appointment &amp; Collaboration</h2>
+        <p>Available for:</p>
+        <ul>
+          <li>Client procedures</li>
+          <li>Collaborations with clinics</li>
+          <li>Educational projects</li>
+          <li>Conferences, talks, mentorship</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact me</h2>
+
+        <ul>
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:demchenko.larisa82@gmail.com"
+              >demchenko.larisa82@gmail.com</a
+            >
+          </li>
+          <li>
+            <strong>Phone:</strong>
+            <a href="tel:+380502856576">+380502856576</a>
+            <span>(WhatsApp, Instagram)</span>
+          </li>
+          <li>
+            <strong>Location:</strong>
+            <span>Burgemeester Nielenplein 38 Heemskerk</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>“Where art, medicine and emotional beauty meet.”</p>
+      </footer>
+    </main>
+  </body>
+</html>

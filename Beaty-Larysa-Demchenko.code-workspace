@@ -1,0 +1,16 @@
+{
+  "folders": [
+	{
+		"name": "Beaty-Larysa-Demchenko",
+		"path": "."
+	},
+	{
+		"name": "projectsGO",
+		"path": "../projectsGO"
+	}
+],
+  "settings": {
+    "terminal.integrated.fontSize": 18,
+    "liveServer.settings.multiRootWorkspaceName": "projectsGO"
+  }
+}
