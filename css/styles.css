@@ -9,7 +9,8 @@ body {
   padding: 0;
 }
 body {
-  font-family: "Bodoni Moda", serif; /* запасной цвет, если вдруг без градиента */
+  font-family:
+    "Bodoni Moda", serif; /* запасной цвет, если вдруг без градиента */
   background-color: #e8e3d8;
 
   /* сам градиент — слева теплее, справа светлее */
@@ -160,7 +161,8 @@ body {
   overflow: hidden; /* всё лишнее обрезаем */
   padding: 0; /* без внутренних отступов */
   background: transparent;
-  box-shadow: 0 40px 80px rgba(196, 165, 123, 0.35),
+  box-shadow:
+    0 40px 80px rgba(196, 165, 123, 0.35),
     0 0 60px rgba(196, 165, 123, 0.25); /* пусть тень будет у контейнера */
 }
 .portrait-img {
@@ -713,7 +715,8 @@ body {
 .contact-photo,
 .contact-right {
   border-radius: 20px;
-  box-shadow: 0 40px 80px rgba(196, 165, 123, 0.35),
+  box-shadow:
+    0 40px 80px rgba(196, 165, 123, 0.35),
     0 0 60px rgba(196, 165, 123, 0.25);
 }
 body {
@@ -991,10 +994,8 @@ body {
     border-radius: 0;
 
     /* ВАЖНО: фон только в контейнере на мобильной версии */
-    background: linear-gradient(
-        rgba(247, 241, 229, 0.8),
-        rgba(247, 241, 229, 0.8)
-      ),
+    background:
+      linear-gradient(rgba(247, 241, 229, 0.8), rgba(247, 241, 229, 0.8)),
       url("https://anastasiialobanovaa.github.io/Beaty-Larysa-Demchenko/images/brand-background.jpg");
 
     background-size: cover;
@@ -1068,5 +1069,449 @@ body {
 
   .contact-right {
     margin-top: 8px !important; /* ещё чуть-чуть воздуха над фото */
+  }
+}
+/* page of prices */
+/* =========================
+   HEADERS (h2/h3/h4 classes)
+   Style: like template (soft luxe, airy, thin lines)
+   ========================= */
+
+/* optional base (если не задавала где-то ещё) */
+:root {
+  --bg: #f3eee4;
+  --text: #2a2722;
+  --muted: rgba(42, 39, 34, 0.72);
+  --line: rgba(42, 39, 34, 0.16);
+  --accent: #c9a77e; /* тёплое золото */
+  --serif: "Bodoni Moda", serif;
+}
+
+/* общий ритм для секций (чтобы всё “дышало”) */
+#price,
+#why,
+#appointment {
+  padding: 26px 0;
+}
+
+#price {
+  border-top: 1px solid var(--line);
+}
+
+/* ===== H2 (главные заголовки секций) ===== */
+.h2 {
+  margin: 0 0 18px;
+  font-family: var(--serif);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  /* мягкий “шаблонный” цвет */
+  color: rgba(42, 39, 34, 0.55);
+
+  /* адаптивный размер, чтобы красиво и на мобиле, и на десктопе */
+  font-size: clamp(26px, 4.2vw, 54px);
+  line-height: 1.05;
+}
+
+/* тонкая линия под H2 как в шаблоне */
+.h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background: var(--line);
+  width: 100%;
+  margin-top: 14px;
+}
+
+/* ===== H3 (подразделы, блоки услуг) ===== */
+.h3 {
+  margin: 18px 0 10px;
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  color: rgba(42, 39, 34, 0.82);
+  font-size: clamp(14px, 2.2vw, 18px);
+  line-height: 1.2;
+}
+
+/* ===== H4 (названия процедур внутри блоков) ===== */
+.h4 {
+  margin: 14px 0 8px;
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: rgba(42, 39, 34, 0.72);
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+/* маленький акцент “NEW” и похожих слов внутри h4, если захочешь обыграть */
+.h4 .tag,
+.h4 .new {
+  color: var(--accent);
+}
+
+/* =========================
+   Mobile tweaks (телефон)
+   ========================= */
+@media (max-width: 480px) {
+  .h2 {
+    letter-spacing: 0.12em;
+  }
+  .h2::after {
+    margin-top: 12px;
+  }
+
+  .h3 {
+    margin-top: 16px;
+    letter-spacing: 0.08em;
+  }
+
+  .h4 {
+    letter-spacing: 0.12em;
+  }
+}
+
+/* =========================
+   Optional: make text blocks look “template-ish”
+   (у тебя в prices.html много <p> под заголовками)
+   ========================= */
+#price p,
+#why p,
+#appointment p,
+#price li,
+#why li,
+#appointment li {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+#price ul,
+#why ul,
+#appointment ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+#price ul li {
+  margin: 6px 0;
+}
+
+/* ссылки “Book now” — аккуратно как в шаблоне */
+#price a,
+#why a,
+#appointment a {
+  color: rgba(42, 39, 34, 0.78);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+#price a:hover,
+#why a:hover,
+#appointment a:hover {
+  border-bottom-color: var(--accent);
+}
+/* кнопка */
+.spoiler-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: 0.02em;
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.spoiler-btn:hover,
+.spoiler-btn:focus {
+  border-color: rgba(0, 0, 0, 0.45);
+  transform: translateY(-1px);
+}
+
+/* контейнер спойлера */
+.spoiler {
+  margin-top: 14px;
+}
+
+/* карточка */
+.spoiler-card {
+  max-width: 820px; /* чтобы не распирало на всю страницу */
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(6px);
+}
+
+/* сетка: десктоп = 2 колонки, мобилка = 1 колонка */
+.spoiler-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+/* общий стиль элементов */
+.media-item {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+/* картинка */
+.spoiler-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px; /* ограничиваем высоту */
+  object-fit: cover;
+}
+
+/* видео: делаем нормальный responsive-блок */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* красиво и адаптивно */
+}
+
+.spoiler-video,
+.spoiler-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* мобилка */
+@media (max-width: 767px) {
+  .spoiler-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .spoiler-media {
+    grid-template-columns: 1fr; /* 1 колонка */
+    gap: 10px;
+  }
+
+  .spoiler-img {
+    max-height: 320px;
+  }
+}
+:root {
+  /* warm champagne / wax gold */
+  --gold: #b89b6a;
+  --gold-2: #d6c09b; /* светлее */
+  --ink: rgba(40, 32, 24, 0.86);
+  --muted: rgba(40, 32, 24, 0.62);
+  --card: rgba(255, 255, 255, 0.55);
+  --blur: blur(10px);
+}
+
+/* общий текст прайса */
+#price {
+  color: var(--ink);
+}
+
+#price .h2 {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(40, 32, 24, 0.72);
+}
+
+/* карточки прайса */
+.price-card,
+.price-group {
+  background: var(--card);
+  backdrop-filter: var(--blur);
+  border-radius: 18px;
+  padding: 18px 18px;
+  margin: 16px 0;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+/* заголовок услуги */
+.price-card .h3,
+.price-group .h3 {
+  margin: 0 0 10px;
+  color: rgba(40, 32, 24, 0.78);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* обычные абзацы */
+.price-card p {
+  margin: 8px 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* цены */
+.price-amount {
+  margin-top: 10px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.price-amount strong {
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* списки внутри прайса */
+#price ul {
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+
+#price li {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+/* кнопка SEE MORE (теплое золото, без линий-делителей) */
+.price-btn,
+#price button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 12px;
+  padding: 10px 16px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(214, 192, 155, 0.85),
+    rgba(184, 155, 106, 0.85)
+  );
+  color: rgba(35, 28, 20, 0.9);
+
+  font: inherit;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(184, 155, 106, 0.25);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
+}
+
+.price-btn:hover,
+.price-btn:focus,
+#price button:hover,
+#price button:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(184, 155, 106, 0.3);
+  filter: saturate(1.05);
+}
+
+/* Book now как “luxury link button” без линии */
+.price-book,
+#price a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.price-book:hover,
+#price a:hover {
+  color: rgba(184, 155, 106, 0.9);
+}
+
+/* spoiler media внутри карточки (чтобы не распирало) */
+.spoiler-card {
+  max-width: 860px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+.spoiler-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.media-item {
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.spoiler-img {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+.video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.spoiler-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+/* ✅ MOBILE */
+@media (max-width: 767px) {
+  .price-card,
+  .price-group {
+    padding: 14px 14px;
+    border-radius: 16px;
+    margin: 12px 0;
+  }
+
+  .price-card .h3,
+  .price-group .h3 {
+    font-size: 16px; /* если твой h3 слишком крупный */
+  }
+
+  .price-btn,
+  #price button {
+    width: 100%; /* на телефоне кнопка во всю ширину */
+    padding: 12px 16px;
+  }
+
+  .spoiler-media {
+    grid-template-columns: 1fr; /* фото и видео в столбик */
+  }
+
+  .spoiler-img {
+    max-height: 320px;
   }
 }
