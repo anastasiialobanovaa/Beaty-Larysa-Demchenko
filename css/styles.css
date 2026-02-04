@@ -1515,3 +1515,224 @@ body {
     max-height: 320px;
   }
 }
+:root {
+  --gold: #b89b6a; /* wax/champagne */
+  --gold-soft: #d6c09b; /* светлее */
+  --ink: rgba(40, 32, 24, 0.86);
+  --muted: rgba(40, 32, 24, 0.62);
+  --panel: rgba(255, 255, 255, 0.55);
+}
+
+.appointment {
+  padding: 34px 0;
+}
+
+.appointment__wrap {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: center;
+}
+
+/* левый блок — как карточка */
+.appointment__left {
+  background: var(--panel);
+  backdrop-filter: blur(10px);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
+}
+
+/* фото перед заголовком */
+.appointment__photo {
+  width: 100%;
+  max-width: 420px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  display: block;
+  margin: 0 0 18px;
+}
+
+/* заголовок оставляем большим, добавим “золото” в акцент */
+.appointment__title {
+  margin: 0 0 14px;
+  color: rgba(40, 32, 24, 0.7);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* золотое “свечение” без линий */
+.appointment__title::after {
+  content: "";
+  display: block;
+  width: 84px;
+  height: 8px;
+  margin-top: 10px;
+  border-radius: 999px;
+  background: radial-gradient(
+    circle,
+    rgba(184, 155, 106, 0.55),
+    rgba(184, 155, 106, 0)
+  );
+}
+
+/* подзаголовок */
+.appointment__lead {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+/* список — дорогие маркеры */
+.appointment__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+  display: grid;
+  gap: 10px;
+}
+
+.appointment__list li {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 14px;
+  padding: 12px 14px 12px 42px;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.06);
+}
+
+/* золотой маркер-капля */
+.appointment__list li::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--gold-soft), var(--gold));
+  box-shadow: 0 8px 18px rgba(184, 155, 106, 0.35);
+}
+
+/* кнопка */
+.appointment__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(35, 28, 20, 0.9);
+  background: linear-gradient(
+    180deg,
+    rgba(214, 192, 155, 0.9),
+    rgba(184, 155, 106, 0.85)
+  );
+  box-shadow: 0 14px 30px rgba(184, 155, 106, 0.25);
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.appointment__btn:hover,
+.appointment__btn:focus {
+  transform: translateY(-1px);
+  box-shadow: 0 18px 34px rgba(184, 155, 106, 0.32);
+}
+
+/* правый блок — просто мягкий “gold glow”, можно оставить пустым */
+.appointment__right {
+  min-height: 320px;
+  border-radius: 26px;
+  background: radial-gradient(
+    circle at 40% 35%,
+    rgba(214, 192, 155, 0.35),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* 📱 MOBILE */
+@media (max-width: 767px) {
+  .appointment__wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .appointment__left {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .appointment__photo {
+    height: 200px;
+    border-radius: 16px;
+    margin-bottom: 14px;
+  }
+
+  .appointment__title {
+    letter-spacing: 0.06em;
+  }
+
+  .appointment__btn {
+    width: 100%;
+  }
+
+  .appointment__right {
+    display: none;
+  }
+}
+.appointment__wrap {
+  max-width: 1100px;
+  margin: 0 auto; /* 👈 центр по странице */
+  padding: 0 24px; /* чтобы не прилипало к краям */
+}
+.appointment__list {
+  margin-bottom: 22px;
+}
+.appointment__btn {
+  margin-top: 8px;
+}
+.appointment__left {
+  max-width: 520px;
+}
+/* гарантированно центрирует блок секции на десктопе */
+#appointment.appointment {
+  display: flex;
+  justify-content: center;
+}
+
+#appointment .appointment__wrap {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container {
+  margin: 0 auto;
+}
+
+#appointment {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* DESKTOP FIX: центрируем весь appointment-блок */
+@media (min-width: 768px) {
+  #appointment .appointment__wrap {
+    grid-template-columns: 1fr !important; /* вместо 2 колонок */
+    justify-items: center !important; /* центрируем контент */
+  }
+
+  #appointment .appointment__right {
+    display: none !important; /* убираем пустую правую колонку */
+  }
+
+  #appointment .appointment__left {
+    width: min(600px, 100%) !important; /* аккуратная ширина карточки */
+    margin: 0 auto !important;
+  }
+}
