@@ -1736,3 +1736,151 @@ body {
     margin: 0 auto !important;
   }
 }
+/* WHY CLIENTS CHOOSE ME — desktop polish */
+#why {
+  padding: 44px 0;
+}
+
+/* центрируем контейнер самого блока */
+#why .services-section {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* заголовок */
+#why .services-label {
+  text-align: center;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  color: rgba(184, 155, 106, 0.75); /* wax/champagne */
+}
+
+/* список — делаем “органичную” колонку */
+#why .services-list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+  justify-items: center;
+}
+
+/* каждый пункт — нормальный размер + читаемость */
+#why .services-list li {
+  width: 100%;
+  max-width: 760px;
+  text-align: center;
+
+  color: rgba(40, 32, 24, 0.8);
+  line-height: 1.7;
+
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 18px;
+  padding: 14px 18px;
+
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+  position: relative;
+}
+
+/* золотая точка над текстом — как у тебя, но аккуратнее */
+#why .services-list li::before {
+  content: "";
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  margin: 0 auto 10px;
+  background: radial-gradient(
+    circle,
+    rgba(214, 192, 155, 1),
+    rgba(184, 155, 106, 1)
+  );
+  box-shadow: 0 10px 18px rgba(184, 155, 106, 0.25);
+}
+
+/* DESKTOP: делаем текст крупнее */
+@media (min-width: 1024px) {
+  #why .services-label {
+    font-size: 28px; /* заголовок больше */
+  }
+
+  #why .services-list li {
+    font-size: 18px; /* текст пунктов больше */
+    padding: 16px 20px;
+  }
+}
+
+/* MOBILE: оставляем компактно */
+@media (max-width: 767px) {
+  #why .services-section {
+    padding: 0 16px;
+  }
+
+  #why .services-label {
+    font-size: 16px;
+    letter-spacing: 0.14em;
+  }
+
+  #why .services-list {
+    gap: 12px;
+  }
+
+  #why .services-list li {
+    font-size: 14px;
+    padding: 12px 14px;
+    border-radius: 16px;
+  }
+}
+
+/* Appointment card full width */
+.appointment__left {
+  width: 100%;
+  max-width: none; /* ❗ убираем ограничение */
+  margin: 0; /* ❗ убираем центрирование */
+  border-radius: 28px; /* оставляем мягкие края */
+}
+/* TEST */
+/* Global beige background with image — DESKTOP ONLY */
+@media (min-width: 1024px) {
+  .page-panel {
+    position: relative;
+    background-image: url("../images/brand-background.jpg"); /* потом заменишь */
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  /* приглушающий шампань-слой */
+  .page-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 248, 235, 0.9); /* мягко, не серо */
+    z-index: 0;
+  }
+
+  /* весь контент поверх фона */
+  .page-panel > * {
+    position: relative;
+    z-index: 1;
+  }
+}
+/* TEST MOBILE */
+/* Mobile navigation — compact version */
+@media (max-width: 767px) {
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 18px; /* меньше расстояние между ссылками */
+    padding: 6px 0; /* меньше высота */
+  }
+
+  .nav a {
+    font-size: 12px; /* 👈 главное: уменьшаем */
+    letter-spacing: 0.08em; /* аккуратнее, не так “широко” */
+    padding: 4px 6px; /* уменьшаем кликабельную зону */
+    line-height: 1.2;
+  }
+}
